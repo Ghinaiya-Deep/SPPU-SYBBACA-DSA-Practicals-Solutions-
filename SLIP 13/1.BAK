@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<ctype.h>
+
+struct stach
+{
+char data[20];
+int top;
+};
+
+void init(struct stack *s)
+{
+s->top=-1;
+}
+
+int isempty(struct stack *s)
+{
+if(s->top==-1)
+return 1;
+else
+return 0;
+}
+
+void push(struct stack *s,char x)
+{
+s->top++;
+s->data[s->top]=x;
+}
+
+char pop(struct stack *s)
+{
+if(s->top==-1)
+return 1;
+else
+return s->data[s->top--];
+}
+
